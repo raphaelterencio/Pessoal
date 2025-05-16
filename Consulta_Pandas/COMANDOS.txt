@@ -8,3 +8,8 @@ chamar uma função em cada elemento da series
 exibir a serie ordernada por índice
 exibir a serie ordenrada descrescentemente por valor 
  
+ORDENA POR valores
+print(srValor.sort_values)
+
+print(srValor.values) -> retorna somente os valores ds indicies 
+print(srValor.index) -> retorna somente os índices sem valores
