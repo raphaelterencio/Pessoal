@@ -1,0 +1,822 @@
+[
+  {
+    "pergunta": "como agrupar um dataframe por coluna",
+    "resposta": "Use df.groupby('coluna').mean() para agrupar e calcular média."
+  },
+  {
+    "pergunta": "como ordenar um dataframe",
+    "resposta": "Use df.sort_values('coluna') para ordenar por uma coluna."
+  },
+  {
+    "pergunta": "como filtrar valores maiores que 10",
+    "resposta": "Use df[df['coluna'] > 10] para filtrar valores."
+  },
+  {
+    "pergunta": "como ler um csv",
+    "resposta": "Use pd.read_csv('arquivo.csv') para ler arquivos .csv."
+  },
+  {
+    "pergunta": "como ordenar um dataframe por duas colunas",
+    "resposta": "df.sort_values(by=['coluna1', 'coluna2'])"
+  },
+  {
+    "pergunta": "como selecionar apenas algumas colunas do dataframe",
+    "resposta": "df[['coluna1', 'coluna2']]"
+  },
+  {
+    "pergunta": "como filtrar linhas onde a coluna idade é maior que 30",
+    "resposta": "df[df['idade'] > 30]"
+  },
+  {
+    "pergunta": "como filtrar com duas condições",
+    "resposta": "df[(df['coluna1'] > 10) & (df['coluna2'] < 50)]"
+  },
+  {
+    "pergunta": "como acessar a primeira linha do dataframe",
+    "resposta": "df.iloc[0]"
+  },
+  {
+    "pergunta": "como acessar a última linha do dataframe",
+    "resposta": "df.iloc[-1]"
+  },
+  {
+    "pergunta": "como acessar uma célula específica",
+    "resposta": "df.loc[linha, 'coluna']"
+  },
+  {
+    "pergunta": "como resetar o índice do dataframe",
+    "resposta": "df.reset_index(drop=True, inplace=True)"
+  },
+  {
+    "pergunta": "como remover uma coluna",
+    "resposta": "df.drop('coluna', axis=1)"
+  },
+  {
+    "pergunta": "como renomear colunas",
+    "resposta": "df.rename(columns={'antigo': 'novo'})"
+  },
+  {
+    "pergunta": "como aplicar uma função a uma coluna",
+    "resposta": "df['coluna'] = df['coluna'].apply(funcao)"
+  },
+  {
+    "pergunta": "como criar uma nova coluna baseada em condição",
+    "resposta": "df['nova'] = df['idade'].apply(lambda x: 'maior' if x >= 18 else 'menor')"
+  },
+  {
+    "pergunta": "como contar valores únicos de uma coluna",
+    "resposta": "df['coluna'].value_counts()"
+  },
+  {
+    "pergunta": "como contar valores nulos em uma coluna",
+    "resposta": "df['coluna'].isnull().sum()"
+  },
+  {
+    "pergunta": "como remover linhas com valores nulos",
+    "resposta": "df.dropna()"
+  },
+  {
+    "pergunta": "como preencher valores nulos com zero",
+    "resposta": "df.fillna(0)"
+  },
+    {
+    "pergunta": "o que é pandas no python",
+    "resposta": "Pandas é uma biblioteca Python para análise e manipulação de dados, oferecendo estruturas como Series e DataFrame que facilitam o trabalho com dados tabulares."
+  },
+  {
+    "pergunta": "como importar pandas",
+    "resposta": "Use: import pandas as pd"
+  },
+  {
+    "pergunta": "o que é uma series no pandas",
+    "resposta": "Uma Series é um array unidimensional rotulado capaz de armazenar qualquer tipo de dado. Exemplo: pd.Series([10, 20, 30], index=['a', 'b', 'c'])"
+  },
+  {
+    "pergunta": "como criar uma series",
+    "resposta": "Use: pd.Series([10, 20, 30]) ou pd.Series([10, 20, 30], index=['a', 'b', 'c'])"
+  },
+  {
+    "pergunta": "como acessar elementos de uma series",
+    "resposta": "Use o índice: s['a'] ou s[0]"
+  },
+  {
+    "pergunta": "como aplicar uma função em uma series",
+    "resposta": "Use: s.apply(funcao), onde s é uma Series"
+  },
+  {
+    "pergunta": "o que é um dataframe no pandas",
+    "resposta": "Um DataFrame é uma tabela bidimensional (linhas e colunas), parecida com uma planilha Excel. Exemplo: pd.DataFrame({'nome': ['Ana', 'Beto'], 'idade': [20, 30]})"
+  },
+  {
+    "pergunta": "como criar um dataframe no pandas",
+    "resposta": "Use: pd.DataFrame({'coluna1': [valores], 'coluna2': [valores]})"
+  },
+  {
+    "pergunta": "como acessar uma coluna de um dataframe",
+    "resposta": "Use: df['coluna']"
+  },
+  {
+    "pergunta": "como acessar uma linha de um dataframe",
+    "resposta": "Use: df.loc[0] para acessar pela label ou df.iloc[0] para acessar pela posição"
+  },
+  {
+    "pergunta": "como acessar um valor especifico em um dataframe",
+    "resposta": "Use: df.loc[linha, 'coluna'] ou df.iloc[linha, coluna]"
+  },
+  {
+    "pergunta": "como verificar o tipo de dado de cada coluna",
+    "resposta": "Use: df.dtypes"
+  },
+  {
+    "pergunta": "como converter tipo de uma coluna",
+    "resposta": "Use: df['coluna'] = df['coluna'].astype(tipo)"
+  },
+  {
+    "pergunta": "como ver os primeiros elementos de um dataframe",
+    "resposta": "Use: df.head()"
+  },
+  {
+    "pergunta": "como ver os últimos elementos de um dataframe",
+    "resposta": "Use: df.tail()"
+  },
+  {
+    "pergunta": "como ver informações gerais do dataframe",
+    "resposta": "Use: df.info()"
+  },
+  {
+    "pergunta": "como ver estatísticas descritivas de um dataframe",
+    "resposta": "Use: df.describe()"
+  },
+  {
+    "pergunta": "como agrupar um dataframe por coluna e calcular soma",
+    "resposta": "df.groupby('coluna')['valor'].sum()"
+  },
+  {
+    "pergunta": "como agrupar por múltiplas colunas e calcular média e soma",
+    "resposta": "df.groupby(['col1', 'col2']).agg({'col3': 'mean', 'col4': 'sum'})"
+  },
+  {
+    "pergunta": "como agrupar e resetar índice",
+    "resposta": "df.groupby('coluna').mean().reset_index()"
+  },
+  {
+    "pergunta": "como mesclar dois dataframes pela coluna id (inner join)",
+    "resposta": "pd.merge(df1, df2, on='id', how='inner')"
+  },
+  {
+    "pergunta": "como mesclar dois dataframes com left join",
+    "resposta": "pd.merge(df1, df2, on='id', how='left')"
+  },
+  {
+    "pergunta": "como concatenar dataframes verticalmente",
+    "resposta": "pd.concat([df1, df2], axis=0)"
+  },
+  {
+    "pergunta": "como concatenar dataframes horizontalmente",
+    "resposta": "pd.concat([df1, df2], axis=1)"
+  },
+  {
+    "pergunta": "como criar pivot table",
+    "resposta": "df.pivot_table(index='col1', columns='col2', values='valor', aggfunc='sum')"
+  },
+  {
+    "pergunta": "como derreter o dataframe (melt)",
+    "resposta": "df.melt(id_vars=['id'], value_vars=['col1', 'col2'], var_name='variavel', value_name='valor')"
+  },
+  {
+    "pergunta": "como obter estatísticas descritivas de uma coluna específica",
+    "resposta": "df['coluna'].describe()"
+  },
+  {
+    "pergunta": "como pegar os primeiros elementos de uma Series",
+    "resposta": "Use s.head(n) para retornar os primeiros n elementos da Series."
+  },
+  {
+    "pergunta": "como pegar os últimos elementos de uma Series",
+    "resposta": "Use s.tail(n) para retornar os últimos n elementos da Series."
+  },
+  {
+    "pergunta": "como acessar um elemento por posição",
+    "resposta": "Use s.iloc[posição] para acessar pelo índice posicional (por exemplo, s.iloc[-1] para o último)."
+  },
+  {
+    "pergunta": "como acessar um elemento por rótulo",
+    "resposta": "Use s.loc['rótulo'] para acessar pelo índice (label) da Series."
+  },
+  {
+    "pergunta": "como filtrar múltiplos rótulos",
+    "resposta": "Use s.loc[[\"rótulo1\", \"rótulo2\"]] para retornar uma sub‐Series com esses índices."
+  },
+  {
+    "pergunta": "como filtrar um intervalo de rótulos",
+    "resposta": "Use s.loc['rótulo_inicial':'rótulo_final'] para fatiar pelo índice."
+  },
+  {
+    "pergunta": "como remover valores nulos",
+    "resposta": "Use s.dropna() para retornar uma cópia sem os elementos NaN."
+  },
+  {
+    "pergunta": "como preencher valores nulos",
+    "resposta": "Use s.fillna(valor) para substituir NaN por um valor especificado."
+  },
+  {
+    "pergunta": "como ordenar pelos valores",
+    "resposta": "Use s.sort_values(ascending=True) para ordenar a Series pelos valores."
+  },
+  {
+    "pergunta": "como ordenar pelos índices",
+    "resposta": "Use s.sort_index(ascending=True) para ordenar a Series pelos índices (labels)."
+  },
+  {
+    "pergunta": "como calcular a média",
+    "resposta": "Use s.mean() para obter a média aritmética dos valores."
+  },
+  {
+    "pergunta": "como calcular a soma",
+    "resposta": "Use s.sum() para obter a soma de todos os valores."
+  },
+  {
+    "pergunta": "como contar quantos elementos não nulos",
+    "resposta": "Use s.count() para obter o número de valores não nulos."
+  },
+  {
+    "pergunta": "como contar ocorrências de cada valor",
+    "resposta": "Use s.value_counts() para obter a frequência de cada valor único."
+  },
+  {
+    "pergunta": "como obter estatísticas descritivas gerais",
+    "resposta": "Use s.describe() para retornar count, mean, std, min, quartis e max."
+  },
+  {
+    "pergunta": "como calcular variância",
+    "resposta": "Use s.var() para obter a variância amostral dos valores."
+  },
+  {
+    "pergunta": "como calcular desvio padrão",
+    "resposta": "Use s.std() para obter o desvio padrão amostral dos valores."
+  },
+  {
+    "pergunta": "como calcular quantis",
+    "resposta": "Use s.quantile(q) para obter o quantil q (por exemplo, s.quantile(0.9))."
+  },
+  {
+    "pergunta": "como calcular amplitude (max – min)",
+    "resposta": "Use s.max() – s.min() para obter a diferença entre o maior e o menor valor."
+  },
+  {
+    "pergunta": "como calcular covariância e correlação entre duas Series",
+    "resposta": "Use s.cov(outra) e s.corr(outra) para covariância e correlação."
+  },
+  {
+    "pergunta": "como ler um arquivo Excel em uma Series",
+    "resposta": "Use pd.read_excel(caminho, header=None, index_col=0).squeeze() para carregar em Series."
+  },
+  {
+    "pergunta": "como salvar uma Series em Excel",
+    "resposta": "Use s.to_excel(caminho, sheet_name=\"nome\", index=True, header=False) para exportar."
+  },
+  {
+    "pergunta": "como aplicar uma função a cada elemento",
+    "resposta": "Use s.apply(funcao, args=(...)) para retornar uma nova Series transformada."
+  },
+  {
+    "pergunta": "como substituir valores específicos",
+    "resposta": "Use s.replace(to_replace=valor, value=novo) para substituir em uma cópia."
+  },
+  {
+    "pergunta": "como atualizar uma Series com outra",
+    "resposta": "Use s.update(outra_series) para alinhar índices e substituir valores existentes."
+  },
+  {
+    "pergunta": "como concatenar várias Series",
+    "resposta": "Use pd.concat([s1, s2, ...], ignore_index=True) para combiná-las num único objeto."
+  },
+  {
+    "pergunta": "como fazer operações aritméticas entre Series alinhadas",
+    "resposta": "Use operadores (s1 + s2) ou métodos como s1.add(s2, fill_value=0) para alinhar índices."
+  },
+  {
+    "pergunta": "como agrupar uma Series e obter um grupo específico",
+    "resposta": "Use g = s.groupby(chave); depois g.get_group('valor_do_grupo') para extrair."
+  },
+  {
+    "pergunta": "como obter o tamanho de cada grupo",
+    "resposta": "Use s.groupby(chave).size() para retornar a contagem em cada grupo."
+  },
+  {
+    "pergunta": "como agregar grupos com várias funções",
+    "resposta": "Use g.agg([min, max, sum, 'mean']) para aplicar múltiplas agregações."
+  },
+  {
+    "pergunta": "como agregar grupos com função personalizada",
+    "resposta": "Defina def f(x): ...; então use g.agg(f) para aplicar."
+  },
+  {
+    "pergunta": "como traçar gráficos diretamente de uma Series",
+    "resposta": "Use s.plot(kind='line'/'bar'/'hist'/'pie' etc.) para visualizações nativas."
+  },
+    {
+    "pergunta": "como criar Series",
+    "resposta": "s = pd.Series([valores], index=[índices])"
+  },
+  {
+    "pergunta": "como copiar uma Series",
+    "resposta": "s2 = s.copy()"
+  },
+  {
+    "pergunta": "como pegar os primeiros elementos de uma Series",
+    "resposta": "s.head(n)"
+  },
+  {
+    "pergunta": "como pegar os últimos elementos de uma Series",
+    "resposta": "s.tail(n)"
+  },
+  {
+    "pergunta": "como obter valores puros de uma Series",
+    "resposta": "s.values"
+  },
+  {
+    "pergunta": "como obter índices de uma Series",
+    "resposta": "s.index"
+  },
+  {
+    "pergunta": "como obter o tamanho de uma Series",
+    "resposta": "s.size"
+  },
+  {
+    "pergunta": "como acessar elemento por rótulo em Series",
+    "resposta": "s.loc['rótulo']"
+  },
+  {
+    "pergunta": "como acessar elemento por posição em Series",
+    "resposta": "s.iloc[posição]"
+  },
+  {
+    "pergunta": "como filtrar fatiamento por rótulo em Series",
+    "resposta": "s.loc['start':'end']"
+  },
+  {
+    "pergunta": "como aplicar filtro booleano em Series",
+    "resposta": "s[s > valor]"
+  },
+  {
+    "pergunta": "como alterar ou incluir valores em Series",
+    "resposta": "s.loc['novo_rótulo'] = valor"
+  },
+  {
+    "pergunta": "como descartar índices em Series",
+    "resposta": "s.drop(['i1','i2'])"
+  },
+  {
+    "pergunta": "como descartar valores nulos em Series",
+    "resposta": "s.dropna()"
+  },
+  {
+    "pergunta": "como ordenar Series pelos valores",
+    "resposta": "s.sort_values(ascending=True)"
+  },
+  {
+    "pergunta": "como ordenar Series pelos índices",
+    "resposta": "s.sort_index(ascending=True)"
+  },
+  {
+    "pergunta": "como preencher nulos em Series",
+    "resposta": "s.fillna(valor)"
+  },
+  {
+    "pergunta": "como substituir valores em Series",
+    "resposta": "s.replace(to_replace=antigo, value=novo)"
+  },
+  {
+    "pergunta": "como atualizar uma Series com outra",
+    "resposta": "s.update(outra_series)"
+  },
+  {
+    "pergunta": "como calcular média de uma Series",
+    "resposta": "s.mean()"
+  },
+  {
+    "pergunta": "como calcular mediana de uma Series",
+    "resposta": "s.median()"
+  },
+  {
+    "pergunta": "como calcular moda de uma Series",
+    "resposta": "s.mode()"
+  },
+  {
+    "pergunta": "como obter mínimo e máximo de uma Series",
+    "resposta": "s.min()  e  s.max()"
+  },
+  {
+    "pergunta": "como obter índice do mínimo e máximo de uma Series",
+    "resposta": "s.idxmin()  e  s.idxmax()"
+  },
+  {
+    "pergunta": "como calcular quantil de uma Series",
+    "resposta": "s.quantile(q)"
+  },
+  {
+    "pergunta": "como calcular variância e desvio padrão de uma Series",
+    "resposta": "s.var()  e  s.std()"
+  },
+  {
+    "pergunta": "como calcular soma e contagem de uma Series",
+    "resposta": "s.sum()  e  s.count()"
+  },
+  {
+    "pergunta": "como obter frequências e resumo de uma Series",
+    "resposta": "s.value_counts()  e  s.describe()"
+  },
+  {
+    "pergunta": "como calcular covariância e correlação entre duas Series",
+    "resposta": "s.cov(outra)  e  s.corr(outra)"
+  },
+  {
+    "pergunta": "como fazer operações aritméticas diretas em Series",
+    "resposta": "s1 + s2  ou  s1 - s2"
+  },
+  {
+    "pergunta": "como operações aritméticas com valor de preenchimento em Series",
+    "resposta": "s1.add(s2, fill_value=0)"
+  },
+  {
+    "pergunta": "como concatenar várias Series",
+    "resposta": "pd.concat([s1, s2], ignore_index=False)"
+  },
+  {
+    "pergunta": "como aplicar função em cada elemento de Series",
+    "resposta": "s.apply(funcao, args=(...))"
+  },
+  {
+    "pergunta": "como reindexar uma Series",
+    "resposta": "s.reindex(novos_índices)"
+  },
+  {
+    "pergunta": "como obter valores únicos e contagem de únicos em Series",
+    "resposta": "s.unique()  e  s.nunique()"
+  },
+  {
+    "pergunta": "como usar isin em Series",
+    "resposta": "s.isin([v1, v2])  e  s.index.isin(['i1','i2'])"
+  },
+  {
+    "pergunta": "como usar expressões lógicas em Series",
+    "resposta": "(s > 10) & (s < 20)  ou  ~(s == valor)"
+  },
+  {
+    "pergunta": "como filtrar por padrão em Series usando string",
+    "resposta": "s.str.contains('padrao')  ou  s.str.match('regex')"
+  },
+  {
+    "pergunta": "como agrupar uma Series e obter tamanho de cada grupo",
+    "resposta": "s.groupby(level=0).size()"
+  },
+  {
+    "pergunta": "como obter um grupo específico de Series agrupada",
+    "resposta": "g = s.groupby(level=0); g.get_group(chave)"
+  },
+  {
+    "pergunta": "como aplicar múltiplas agregações em Series agrupada",
+    "resposta": "g.agg([min, max, sum, 'mean'])"
+  },
+  {
+    "pergunta": "como usar pd.cut em Series",
+    "resposta": "pd.cut(x, bins, right=True, labels=None)"
+  },
+  {
+    "pergunta": "como usar pd.qcut em Series",
+    "resposta": "pd.qcut(x, q, labels=False)"
+  },
+  {
+    "pergunta": "como criar uma Series de datas",
+    "resposta": "pd.date_range(start='2023-01-01', periods=10, freq='D')"
+  },
+  {
+    "pergunta": "como converter string para datetime em Series",
+    "resposta": "pd.to_datetime(s)"
+  },
+  {
+    "pergunta": "como extrair ano, mês e dia de uma Series de datas",
+    "resposta": "s.dt.year, s.dt.month, s.dt.day"
+  },
+  {
+    "pergunta": "como calcular diferença entre datas em Series",
+    "resposta": "(s1 - s2).dt.days"
+  },
+  {
+    "pergunta": "como formatar datas em Series",
+    "resposta": "s.dt.strftime('%Y-%m-%d')"
+  },
+  {
+    "pergunta": "como criar uma Series de números aleatórios",
+    "resposta": "pd.Series(np.random.rand(10))"
+  },
+  {
+    "pergunta": "como criar uma Series de números inteiros aleatórios",
+    "resposta": "pd.Series(np.random.randint(0, 100, size=10))"
+  },
+  {
+    "pergunta": "como criar uma Series de números com distribuição normal",
+    "resposta": "pd.Series(np.random.normal(loc=0, scale=1, size=10))"
+  },
+    {
+    "pergunta": "como ler uma Series a partir de Excel com índice na primeira coluna",
+    "resposta": "pd.read_excel('arquivo.xlsx', index_col=0).squeeze('columns')"
+  },
+  {
+    "pergunta": "como obter o tamanho de uma Series",
+    "resposta": "s.size"
+  },
+  {
+    "pergunta": "como pegar os primeiros elementos de uma Series",
+    "resposta": "s.head(n)"
+  },
+  {
+    "pergunta": "como contar valores não nulos em uma Series",
+    "resposta": "s.count()"
+  },
+  {
+    "pergunta": "como remover valores nulos de uma Series sem alterar o original",
+    "resposta": "s.dropna()"
+  },
+  {
+    "pergunta": "como remover valores nulos de uma Series no lugar",
+    "resposta": "s.dropna(inplace=True)"
+  },
+  {
+    "pergunta": "como substituir valores em uma Series",
+    "resposta": "s.replace(to_replace=antigo, value=novo)"
+  },
+  {
+    "pergunta": "como aplicar uma função em cada elemento de uma Series",
+    "resposta": "s.apply(funcao)"
+  },
+  {
+    "pergunta": "como ordenar uma Series pelo índice",
+    "resposta": "s.sort_index()"
+  },
+  {
+    "pergunta": "como ordenar uma Series pelos valores",
+    "resposta": "s.sort_values(inplace=True)"
+  },
+  {
+    "pergunta": "como criar uma cópia de uma Series",
+    "resposta": "s2 = s.copy()"
+  },
+  {
+    "pergunta": "como acessar um elemento de uma Series por rótulo",
+    "resposta": "s.loc['rótulo']"
+  },
+  {
+    "pergunta": "como acessar um elemento de uma Series por posição",
+    "resposta": "s.iloc[pos]"
+  },
+  {
+    "pergunta": "como selecionar múltiplos elementos de uma Series por rótulo",
+    "resposta": "s[['a', 'b']]"
+  },
+  {
+    "pergunta": "como filtrar uma Series por condição booleana",
+    "resposta": "s[s > valor]"
+  },
+  {
+    "pergunta": "como somar todos os valores de uma Series",
+    "resposta": "s.sum()"
+  },
+  {
+    "pergunta": "como obter o valor máximo de uma Series",
+    "resposta": "s.max()"
+  },
+  {
+    "pergunta": "como obter o índice do valor máximo de uma Series",
+    "resposta": "s.idxmax()"
+  },
+  {
+    "pergunta": "como calcular a média de uma Series",
+    "resposta": "s.mean()"
+  },
+  {
+    "pergunta": "como obter a moda de uma Series",
+    "resposta": "s.mode()"
+  },
+  {
+    "pergunta": "como obter a contagem de frequência de uma Series",
+    "resposta": "s.value_counts()"
+  },
+  {
+    "pergunta": "como obter estatísticas descritivas de uma Series",
+    "resposta": "s.describe()"
+  },
+  {
+    "pergunta": "como agrupar uma Series por índice e obter contagem de cada grupo",
+    "resposta": "s.groupby(level=0).size()"
+  },
+  {
+    "pergunta": "como obter um grupo específico de uma Series agrupada",
+    "resposta": "g = s.groupby(level=0); g.get_group(valor)"
+  },
+  {
+    "pergunta": "como aplicar múltiplas agregações a uma Series agrupada",
+    "resposta": "s.groupby(level=0).agg([min, max, sum, 'mean'])"
+  },
+  {
+    "pergunta": "como criar categorias em uma Series usando bins",
+    "resposta": "pd.cut(s, bins=3, labels=['low','medium','high'])"
+  },
+  {
+    "pergunta": "como obter contagem ordenada de categorias de uma Series",
+    "resposta": "pd.cut(s, bins=3).value_counts().reindex(['low','medium','high'])"
+  },
+  {
+    "pergunta": "como aplicar função customizada em uma Series com argumento extra",
+    "resposta": "s.apply(lambda x: detImposto(x, taxa))"
+  },
+  {
+    "pergunta": "como adicionar um novo elemento em uma Series",
+    "resposta": "s.loc['novo'] = valor"
+  },
+  {
+    "pergunta": "como obter frequência de índices de uma Series",
+    "resposta": "s.index.value_counts()"
+  },
+  {
+    "pergunta": "como criar gráfico de barras de uma Series",
+    "resposta": "s.plot(kind='bar')"
+  },
+  {
+    "pergunta": "como criar gráfico de pizza de uma Series",
+    "resposta": "s.plot(kind='pie')"
+  },
+  {
+    "pergunta": "como ler dados de Excel em uma Series usando squeeze",
+    "resposta": "pd.read_excel('arquivo.xlsx', sheet_name='Sheet1', header=0, usecols=(1,2), index_col=0).squeeze('columns')"
+  },
+  {
+    "pergunta": "como categorizar valores de uma Series em faixas com labels",
+    "resposta": "pd.cut(s, bins=[0, 100, 200, s.max()], labels=['Baixa','Média','Alta'])"
+  },
+  {
+    "pergunta": "como agrupar uma Series pelo nível do índice",
+    "resposta": "s.groupby(level=0)"
+  },
+  {
+    "pergunta": "como agrupar uma Series por outra Series",
+    "resposta": "s.groupby(outra_series)"
+  },
+  {
+    "pergunta": "como agrupar uma Series por categorias",
+    "resposta": "s.groupby(categorias_series)"
+  },
+  {
+    "pergunta": "como aplicar uma função a cada grupo usando apply",
+    "resposta": "grupos.apply(funcao)"
+  },
+  {
+    "pergunta": "como aplicar soma a cada grupo com apply",
+    "resposta": "grupos.apply(lambda g: g.sum())"
+  },
+  {
+    "pergunta": "como usar transform para manter o mesmo tamanho da Series após agrupamento",
+    "resposta": "grupos.transform(funcao)"
+  },
+  {
+    "pergunta": "como contar valores nulos em uma Series",
+    "resposta": "s.isnull().sum()"
+  },
+  {
+    "pergunta": "como preencher valores nulos por mediana do grupo usando transform",
+    "resposta": "grupos.transform(lambda g: g.fillna(g.median()))"
+  },
+  {
+    "pergunta": "como preencher valores nulos por média do grupo usando transform",
+    "resposta": "grupos.transform(lambda g: g.fillna(g.mean()))"
+  },
+  {
+    "pergunta": "como preencher valores nulos por moda do grupo usando transform",
+    "resposta": "grupos.transform(lambda g: g.fillna(g.mode().iloc[0]))"
+  },
+  {
+    "pergunta": "como criar uma tabela cruzada com margens",
+    "resposta": "pd.crosstab(index=s.index, columns=categorias_series, margins=True)"
+  },
+  {
+    "pergunta": "como criar uma tabela cruzada de média e substituir NaN por '-'",
+    "resposta": "pd.crosstab(index=s.index, columns=categorias_series, values=s, aggfunc='mean').fillna('-')"
+  },
+  {
+    "pergunta": "como criar uma tabela cruzada de soma entre duas séries",
+    "resposta": "pd.crosstab(index=s.index, columns=outra_series, values=s, aggfunc='sum').fillna('-')"
+  },
+   {
+    "pergunta": "como concatenar os 5 primeiros e os 5 últimos valores de uma coluna após ordenar",
+    "resposta": "pd.concat([df['coluna'].sort_values().head(5), df['coluna'].sort_values().tail(5)])"
+  },
+  {
+    "pergunta": "como calcular a média de uma coluna com uma casa decimal",
+    "resposta": "round(df['coluna'].mean(), 1)"
+  },
+  {
+    "pergunta": "como obter valores únicos de uma coluna",
+    "resposta": "df['coluna'].unique()"
+  },
+  {
+    "pergunta": "como criar tabela de frequência de uma coluna",
+    "resposta": "df['coluna'].value_counts()"
+  },
+  {
+    "pergunta": "como contar valores distintos de uma coluna",
+    "resposta": "df['coluna'].nunique()"
+  },
+  {
+    "pergunta": "como obter menor e maior valor de uma coluna",
+    "resposta": "df['coluna'].agg(['min','max'])"
+  },
+  {
+    "pergunta": "como obter média, mediana, mínimo e máximo de uma coluna",
+    "resposta": "df['coluna'].agg(['mean','median','min','max'])"
+  },
+  {
+    "pergunta": "como agrupar por uma coluna e calcular média com uma casa decimal",
+    "resposta": "df.groupby('coluna1')['coluna2'].mean().round(1)"
+  },
+  {
+    "pergunta": "como filtrar linhas onde coluna1 > valor e obter o valor mínimo de coluna2",
+    "resposta": "df.loc[df['coluna1'] > valor, 'coluna2'].min()"
+  },
+  {
+    "pergunta": "como calcular percentual de um valor específico em uma coluna categórica",
+    "resposta": "df['coluna'].value_counts(normalize=True)['valor'] * 100"
+  },
+  {
+    "pergunta": "como agrupar por uma coluna e calcular média, mediana e desvio padrão de outra coluna",
+    "resposta": "df.groupby('coluna1')['coluna2'].agg(['mean','median','std'])"
+  },
+  {
+    "pergunta": "como calcular a média de uma coluna filtrando por intervalo de valores em outra coluna",
+    "resposta": "df.loc[(df['coluna1'] >= v1) & (df['coluna1'] <= v2), 'coluna2'].mean()"
+  },
+  {
+    "pergunta": "como filtrar linhas onde coluna3 é igual ao valor máximo de coluna3 e retornar coluna1",
+    "resposta": "df.loc[df['coluna3'] == df['coluna3'].max(), 'coluna1']"
+  },
+  {
+    "pergunta": "como plotar gráfico de barras horizontal da soma de uma coluna por outra",
+    "resposta": "df.groupby('coluna1')['coluna2'].sum().plot.barh()"
+  },
+  {
+    "pergunta": "como filtrar comparando duas colunas e calcular mediana de uma coluna",
+    "resposta": "df.loc[df['coluna1'] > df['coluna2'], 'coluna3'].median()"
+  },
+  {
+    "pergunta": "como calcular correlação entre duas colunas",
+    "resposta": "df['coluna1'].corr(df['coluna2'])"
+  },
+  {
+    "pergunta": "como calcular a diferença entre duas colunas e plotar gráfico de barras vertical",
+    "resposta": "(df['coluna1'] - df['coluna2']).plot(kind='bar')"
+  },
+  {
+    "pergunta": "como criar tabela cruzada entre duas colunas",
+    "resposta": "pd.crosstab(df['coluna1'], df['coluna2'])"
+  },
+  {
+    "pergunta": "como criar tabela cruzada de mediana de uma coluna entre duas outras",
+    "resposta": "pd.crosstab(df['coluna1'], df['coluna2'], values=df['coluna3'], aggfunc='median')"
+  },
+  {
+    "pergunta": "como categorizar uma coluna em 3 faixas de mesmo intervalo e obter frequência",
+    "resposta": "pd.cut(df['coluna'], bins=3, labels=['A','B','C']).value_counts()"
+  },
+  {
+    "pergunta": "como categorizar uma coluna em faixas personalizadas e plotar gráfico de pizza de frequência percentual",
+    "resposta": "pd.cut(df['coluna'], bins=[0,4.9,6.9,8.9,10], labels=['Baixo','Mod','Alto','Exc']).value_counts().plot.pie(autopct='%1.1f%%')"
+  },
+  {
+    "pergunta": "como criar tabela de frequência de uma coluna agrupada por duas outras",
+    "resposta": "df.groupby(['col1','col2'])['col3'].value_counts()"
+  },
+  {
+    "pergunta": "como agrupar por duas colunas e calcular média de outra coluna",
+    "resposta": "df.groupby(['col1','col2'])['col3'].mean()"
+  },
+  {
+    "pergunta": "como usar crosstab para média de outra coluna por duas colunas",
+    "resposta": "pd.crosstab(df['col1'], df['col2'], values=df['col3'], aggfunc='mean')"
+  },
+  {
+    "pergunta": "como ler uma Series de Excel com squeeze",
+    "resposta": "pd.read_excel('arquivo.xlsx', sheet_name='Sheet', usecols=(col_idx), index_col=0).squeeze('columns')"
+  },
+  {
+    "pergunta": "como preencher valores nulos com zero em uma Series",
+    "resposta": "s.fillna(0)"
+  },
+  {
+    "pergunta": "como preencher valores nulos com média geral de uma Series",
+    "resposta": "s.fillna(s.mean())"
+  },
+  {
+    "pergunta": "como preencher valores nulos por média de grupo de outra coluna",
+    "resposta": "df.groupby('coluna2')['coluna1'].apply(lambda g: g.fillna(g.mean()))"
+  }
+]

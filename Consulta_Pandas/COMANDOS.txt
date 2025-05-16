@@ -1,0 +1,10 @@
+DEVE RETORNAR O COMANDO E A EXPLICAÇÃO / CASO MANDE O COMANDO, DEVE ENVIAR OQ ELE FAZ 
+pegar tamanho
+pegar tantos primeiros/ pegar o primeiro
+pegar tantos últimos/ pegar o ultimo
+Quantos validos/ quantos não possuem None
+Exibir ordernada por índice 
+chamar uma função em cada elemento da series
+exibir a serie ordernada por índice
+exibir a serie ordenrada descrescentemente por valor 
+ 
