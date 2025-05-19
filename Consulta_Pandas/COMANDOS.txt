@@ -13,3 +13,10 @@ print(srValor.sort_values)
 
 print(srValor.values) -> retorna somente os valores ds indicies 
 print(srValor.index) -> retorna somente os índices sem valores
+
+.dropna()
+.dropna(inplace=True)
+.sort_index()
+.sort_index(inplace=True)
+
+.sort_values(ascending=True)
