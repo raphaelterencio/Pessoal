@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Dia dos Namorados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Áudio de fundo -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="clair-de-lune-suite-bergamasque-l-75-3rd-movement-claude-debussy-448s-11942.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Animação de corações flutuantes -->
+    <div class="hearts-container">
+        <div class="heart heart1">❤️</div>
+        <div class="heart heart2">💕</div>
+        <div class="heart heart3">💖</div>
+        <div class="heart heart4">❤️</div>
+        <div class="heart heart5">💕</div>
+        <div class="heart heart6">💖</div>
+        <div class="heart heart7">❤️</div>
+        <div class="heart heart8">💕</div>
+    </div>
+
+    <!-- Seção de fotos -->
+    <div class="photo-section" id="photoSection">
+        <!-- Botão de controle de áudio -->
+        <button id="audioControl" class="audio-button" onclick="toggleAudio()">
+            🔇
+        </button>
+        
+        <!-- Carrossel de fotos personalizado -->
+        <div class="custom-carousel">
+            <img src="Design sem nome (11).png" alt="Foto 1" class="carousel-photo active">
+            <img src="Design sem nome (9).png" alt="Foto 2" class="carousel-photo">
+            <img src="Design sem nome (8).png" alt="Foto 3" class="carousel-photo">
+            <img src="Design sem nome (7).png" alt="Foto 4" class="carousel-photo">
+            
+        </div>
+
+        <div class="carousel-dots">
+            <span class="carousel-dot active" data-index="0"></span>
+            <span class="carousel-dot" data-index="1"></span>
+            <span class="carousel-dot" data-index="2"></span>
+            <span class="carousel-dot" data-index="3"></span>
+        </div>
+        
+        <button class="next-button" onclick="goToMessage()">
+            Continuar
+        </button>
+    </div>
+
+    <!-- Seção da mensagem -->
+    <div class="message-section hidden" id="messageSection">
+        <div class="message-container">
+            <h1 class="romantic-title">Filmezinho com mozinho? 🎬💕</h1>
+            <div class="buttons-container">
+                <button class="yes-button" id="yesButton" onclick="showMovies()">
+                    Sim! ❤️
+                </button>
+                <button class="no-button" id="noButton" onclick="moveNoButton()">
+                    Não 😢
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção dos filmes -->
+     <!-- Áudio de fundo -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="clair-de-lune-suite-bergamasque-l-75-3rd-movement-claude-debussy-448s-11942.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <div class="movies-section hidden" id="moviesSection">
+        <h2 class="movies-title">Escolha nosso filme! 🍿❤️</h2>
+        <div class="movies-grid">
+            <div class="movie-card" onclick="selectMovie('Crepusculo')">
+                <img src="crepusculo.webp" alt="Crepusculo">
+                <div class="movie-overlay">
+                    <span>Crepusculo</span>
+                </div>
+            </div>
+            <div class="movie-card" onclick="selectMovie('10 coisas que eu odeio em você')">
+                <img src="10coisas.jpg" alt="10 coisas que eu odeio em você">
+                <div class="movie-overlay">
+                    <span>10 coisas que eu odeio em você</span>
+                </div>
+            </div>
+            <div class="movie-card" onclick="selectMovie('Which brings me to you')">
+                <img src="wbmty.jpg" alt="Which brings me to you">
+                <div class="movie-overlay">
+                    <span>Which brings me to you</span>
+                </div>
+            </div>
+            <div class="movie-card" onclick="selectMovie('Juntos por acaso')">
+                <img src="juntosporacaso.webp" alt="Juntos por acaso">
+                <div class="movie-overlay">
+                    <span>Juntos por acaso</span>
+                </div>
+            </div>
+            <div class="movie-card" onclick="selectMovie('Ela é demais')">
+                <img src="shesallthat.jpg" alt="Ela é demais">
+                <div class="movie-overlay">
+                    <span>Ela é demais</span>
+                </div>
+            </div>
+        </div>
+        <button class="back-button" onclick="goBackToMessage()">
+            ⬅️ Voltar
+        </button>
+    </div>
+
+    <!-- Mensagem de confirmação -->
+    <div class="confirmation-section hidden" id="confirmationSection">
+        <div class="confirmation-container">
+            <h2>Perfeito! 🎉❤️</h2>
+            <p id="selectedMovie"></p>
+            <p>Mal posso esperar para assistir com você! 💕</p>
+            <button onclick="restart()">Começar novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
